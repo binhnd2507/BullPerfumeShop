@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+    <!-- Default Main Template -->
+    <definition name="trangMau" template="/WEB-INF/templates/trang-mau.jsp">
+        <put-attribute name="tieuDe" value="Trang Chu" type="string" />
+        <put-attribute name="dauTrang" value="/WEB-INF/templates/dau-trang.jsp" />
+        <put-attribute name="cuoiTrang" value="/WEB-INF/templates/cuoi-trang.jsp" />
+        <put-attribute name="thucDon" value="/WEB-INF/templates/thuc-don.jsp" />
+        <put-attribute name="chinhSach" value="/WEB-INF/templates/chinh-sach.jsp" />
+        <put-attribute name="thuongHieu" value="/WEB-INF/templates/thuong-hieu.jsp" />
+        <put-attribute name="thucDonPhu" value="" />
+        <put-attribute name="quangCao" value="" />
+        <put-attribute name="noiDung" value="" />
+    </definition>
+ 
+    <definition name="home" extends="trangMau">
+        <put-attribute name="quangCao" value="/WEB-INF/views/quang-cao.jsp" />
+        <put-attribute name="noiDung" value="/WEB-INF/views/san-pham-hien-hanh.jsp" />
+    </definition>
+    
+    <definition name="gioHang" extends="trangMau">
+        <put-attribute name="noiDung" value="/WEB-INF/views/gio-hang.jsp" />
+    </definition>
+    
+    <!-- <definition name="cuaHang" extends="trangMau">
+        <put-attribute name="noiDung" value="/WEB-INF/views/cua-hang.jsp" />
+    </definition> -->
+    
+    <definition name="cuaHang" extends="trangMau">
+    	<put-attribute name="thucDonPhu" value="/WEB-INF/views/tieu-de-cua-hang.jsp" />
+        <put-attribute name="noiDung" value="/WEB-INF/views/phan-trang-cua-hang.jsp" />
+    </definition>
+    
+    <definition name="cuaHangAjax" extends="trangMau">
+    	<put-attribute name="dauTrang" value="" />
+        <put-attribute name="cuoiTrang" value="" />
+        <put-attribute name="thucDon" value="" />
+        <put-attribute name="chinhSach" value="" />
+        <put-attribute name="thuongHieu" value="" />
+        <put-attribute name="noiDung" value="/WEB-INF/views/phan-trang-cua-hang.jsp" />
+    </definition>
+    
+    <definition name="chiTietSanPham" extends="trangMau">
+        <put-attribute name="noiDung" value="/WEB-INF/views/chi-tiet-san-pham.jsp" />
+    </definition>
+    
+    <definition name="chiTietSanPhamPhu" extends="trangMau">
+    	<put-attribute name="dauTrang" value="" />
+        <put-attribute name="cuoiTrang" value="" />
+        <put-attribute name="thucDon" value="" />
+        <put-attribute name="chinhSach" value="" />
+        <put-attribute name="thuongHieu" value="" />
+        <put-attribute name="thucDonPhu" value="" />
+        <put-attribute name="quangCao" value="" />
+        <put-attribute name="noiDung" value="" />
+        <put-attribute name="noiDung" value="/WEB-INF/views/chi-tiet-san-pham-phu.jsp" />
+    </definition>
+    
+    <definition name="dangNhap" extends="trangMau">
+        <put-attribute name="noiDung" value="/WEB-INF/views/dang-nhap.jsp" />
+    </definition>
+    
+</tiles-definitions>
