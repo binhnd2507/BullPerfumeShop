@@ -31,7 +31,7 @@
                           
 	                          <c:forEach items="${dsspgg}" var="spgg">
 	                            <li class="item item-animate wide-first">
-	                              <div class="item-inner" style="margin-left: 10px">
+	                              <div class="item-inner" style="margin-left: 10px;">
 	                                <div class="item-img">
 	                                  <div class="item-img-info"><a href="chi-tiet-san-pham?idsp=${spgg.id}" title="${spgg.tenSanPham}" class="product-image"><img src="images/${spgg.hinhAnh}" alt="images/${spgg.hinhAnh}"></a>
 	                                    <div class="new-label new-top-left">Sale</div>
@@ -73,7 +73,7 @@
 	                              </div>
 	                            </li>
 	                          </c:forEach>
-                          
+	                          
                           </ul>
                         </div>
                         
