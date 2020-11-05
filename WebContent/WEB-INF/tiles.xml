@@ -13,13 +13,11 @@
         <put-attribute name="thucDon" value="/WEB-INF/templates/thuc-don.jsp" />
         <put-attribute name="chinhSach" value="/WEB-INF/templates/chinh-sach.jsp" />
         <put-attribute name="thuongHieu" value="/WEB-INF/templates/thuong-hieu.jsp" />
-        <put-attribute name="thucDonPhu" value="" />
-        <put-attribute name="quangCao" value="" />
+        <put-attribute name="tieuDeCuaHang" value="" />
         <put-attribute name="noiDung" value="" />
     </definition>
  
     <definition name="home" extends="trangMau">
-        <put-attribute name="quangCao" value="/WEB-INF/views/quang-cao.jsp" />
         <put-attribute name="noiDung" value="/WEB-INF/views/san-pham-hien-hanh.jsp" />
     </definition>
     
@@ -27,12 +25,8 @@
         <put-attribute name="noiDung" value="/WEB-INF/views/gio-hang.jsp" />
     </definition>
     
-    <!-- <definition name="cuaHang" extends="trangMau">
-        <put-attribute name="noiDung" value="/WEB-INF/views/cua-hang.jsp" />
-    </definition> -->
-    
     <definition name="cuaHang" extends="trangMau">
-    	<put-attribute name="thucDonPhu" value="/WEB-INF/views/tieu-de-cua-hang.jsp" />
+    	<put-attribute name="tieuDeCuaHang" value="/WEB-INF/views/tieu-de-cua-hang.jsp" />
         <put-attribute name="noiDung" value="/WEB-INF/views/phan-trang-cua-hang.jsp" />
     </definition>
     
@@ -55,9 +49,6 @@
         <put-attribute name="thucDon" value="" />
         <put-attribute name="chinhSach" value="" />
         <put-attribute name="thuongHieu" value="" />
-        <put-attribute name="thucDonPhu" value="" />
-        <put-attribute name="quangCao" value="" />
-        <put-attribute name="noiDung" value="" />
         <put-attribute name="noiDung" value="/WEB-INF/views/chi-tiet-san-pham-phu.jsp" />
     </definition>
     

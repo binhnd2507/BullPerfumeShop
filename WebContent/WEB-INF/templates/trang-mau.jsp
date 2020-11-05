@@ -192,8 +192,7 @@ function phanTrangTheoLoaiThuongHieu(idLoai, idThuongHieu, trang) {
 
 <tiles:insertAttribute name="dauTrang"/>
 <tiles:insertAttribute name="thucDon"/>
-<tiles:insertAttribute name="thucDonPhu"/>
-<tiles:insertAttribute name="quangCao"/>
+<tiles:insertAttribute name="tieuDeCuaHang"/>
 <tiles:insertAttribute name="noiDung"/>
 <tiles:insertAttribute name="chinhSach"/>
 <tiles:insertAttribute name="thuongHieu"/>

@@ -40,12 +40,7 @@ public class GioHangController {
 		return "gioHang";
 	}
 	@RequestMapping(path = "/them-gio-hang", method = RequestMethod.GET)
-	public void themGioHang(Model model, HttpServletRequest request, HttpServletResponse response) throws IOException {
-		
-		int idsp, sl;
-		
-		idsp = Integer.parseInt(request.getParameter("idsp"));
-		sl = Integer.parseInt(request.getParameter("sl"));
+	public void themGioHang(Model model, @RequestParam(name = "idsp") int idsp, @RequestParam(name = "sl") int sl, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		HttpSession session = request.getSession();
 		GioHang gioHang = (GioHang) session.getAttribute("gioHang");
@@ -86,7 +81,7 @@ public class GioHangController {
 		
 		gioHang.them(idsp, slm);
 		
-		return "gioHang";
+		return "redirect:/gio-hang";
 	}
 	@RequestMapping(path = "/cap-nhat-gio-hang", method = RequestMethod.POST)
 	public String capNhat(Model model, HttpServletRequest request, @RequestParam(name = "slMua") String[] slm) {

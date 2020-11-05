@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <fmt:setLocale value="vi-VN" />    
     
-    <div class="container" id="phanTrangCuaHang">
+    
       <div class="row">
         <div class="col-main col-sm-9 col-sm-push-3">
           <article class="col-main">
