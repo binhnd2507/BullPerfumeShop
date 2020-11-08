@@ -26,7 +26,7 @@ import javaBeans.ThuongHieu;
 @Controller
 public class GioHangController {
 
-	@RequestMapping(path = "/gio-hang")
+	@RequestMapping(path = "/gio-hang", method = RequestMethod.GET)
 	public String gioHang(Model model) {
 		
 		List<Loai> dsl = LoaiBL.docTatCa();
@@ -63,14 +63,6 @@ public class GioHangController {
 	@RequestMapping(path = "/them-gio-hang", method = RequestMethod.POST)
 	public String themGioHang(Model model, HttpServletRequest request, @RequestParam(name = "idsp") int idsp, @RequestParam(name = "qty") int slm) {
 		
-		List<Loai> dsl = LoaiBL.docTatCa();
-		List<ThuongHieu> dsth = ThuongHieuBL.docTatCa();
-		List<SanPham> dsspbc = SanPhamBL.banChayNhat(4);
-		
-		model.addAttribute("dsl", dsl);
-		model.addAttribute("dsth", dsth);
-		model.addAttribute("dsspbc", dsspbc);
-		
 		HttpSession session = request.getSession();
 		GioHang gioHang = (GioHang) session.getAttribute("gioHang");
 		
@@ -92,17 +84,10 @@ public class GioHangController {
 			gioHang.sua(slm);
 			session.setAttribute("gioHang", gioHang);
 		}
-		List<Loai> dsl = LoaiBL.docTatCa();
-		List<ThuongHieu> dsth = ThuongHieuBL.docTatCa();
-		List<SanPham> dsspbc = SanPhamBL.banChayNhat(4);
 		
-		model.addAttribute("dsl", dsl);
-		model.addAttribute("dsth", dsth);
-		model.addAttribute("dsspbc", dsspbc);
-		
-		return "gioHang";
+		return "redirect:/gio-hang";
 	}
-	@RequestMapping(path = "/xoa-san-pham")
+	@RequestMapping(path = "/xoa-san-pham", method = RequestMethod.GET)
 	public void xoaSanPham(Model model, @RequestParam(name = "idsp") int idsp, HttpServletRequest request, HttpServletResponse response) {
 		
 		HttpSession session = request.getSession();
@@ -127,13 +112,6 @@ public class GioHangController {
 	}
 	@RequestMapping(path = "/xoa-toan-bo", method = RequestMethod.POST)
 	public String xoaToanBo(Model model, HttpServletRequest request) {
-		List<Loai> dsl = LoaiBL.docTatCa();
-		List<ThuongHieu> dsth = ThuongHieuBL.docTatCa();
-		List<SanPham> dsspbc = SanPhamBL.banChayNhat(4);
-		
-		model.addAttribute("dsl", dsl);
-		model.addAttribute("dsth", dsth);
-		model.addAttribute("dsspbc", dsspbc);
 		
 		HttpSession session = request.getSession();
 		GioHang gioHang = (GioHang) session.getAttribute("gioHang");
@@ -142,6 +120,6 @@ public class GioHangController {
 			gioHang.xoaToanBoSanPham();
 			session.setAttribute("gioHang", gioHang);
 		}
-		return "gioHang";
+		return "redirect:/gio-hang";
 	}
 }

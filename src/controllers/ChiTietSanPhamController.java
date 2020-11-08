@@ -50,26 +50,11 @@ public class ChiTietSanPhamController {
 		
 		BinhChonBL.them(bc);
 		
-		SanPham sp = SanPhamBL.docTheoIdSanPham(bc.getIdSanPham());
+		int idsp = bc.getIdSanPham();
 		
-		Loai loai = LoaiBL.docTheoIdLoai(sp.getIdLoai());
+		model.addAttribute("idsp", idsp);
 		
-		ThuongHieu thuongHieu = ThuongHieuBL.docTheoIdThuongHieu(sp.getIdThuongHieu());
-		
-		List<SanPham> dssplq = SanPhamBL.docTheoIdThuongHieu(sp.getIdThuongHieu());
-		List<SanPham> dsspgg = SanPhamBL.giamGiaNhieuNhat(8);
-		List<Loai> dsl = LoaiBL.docTatCa();
-		List<ThuongHieu> dsth = ThuongHieuBL.docTatCa();
-		
-		model.addAttribute("sp", sp);
-		model.addAttribute("loai", loai);
-		model.addAttribute("thuongHieu", thuongHieu);
-		model.addAttribute("dssplq", dssplq);
-		model.addAttribute("dsspgg", dsspgg);
-		model.addAttribute("dsl", dsl);
-		model.addAttribute("dsth", dsth);
-		
-		return "chiTietSanPham";
+		return "redirect:/chi-tiet-san-pham";
 	}
 	@RequestMapping(path = "/chi-tiet-san-pham-phu/{idsp}")
 	public String chiTietSanPhamPhu(Model model, @PathVariable(name = "idsp") int idsp) {
